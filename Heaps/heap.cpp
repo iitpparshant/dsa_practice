@@ -6,11 +6,11 @@ class heap
 {
 public:
     int arr[100];
-    int size = 0;
+    int size;
     heap()
     {
         arr[0] = -1;
-        int size = 0;
+        size = 0;
     }
     void insert(int val)
     {
@@ -116,7 +116,7 @@ int main()
     h.deletefromheap();
     h.print();
 
-    int arr[6] = {-1, 54, 53, 55, 52, 50};
+    int arr[6] = {-1, 5, 53, 55, 52, 50};
     int n = 5;
     for (int i = n / 2; i > 0; i--)
     {
