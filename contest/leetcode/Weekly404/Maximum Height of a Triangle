@@ -1,0 +1,43 @@
+<!-- https://leetcode.com/problems/maximum-height-of-a-triangle/description/ -->
+
+<!--                 3200. Maximum Height of a Triangle              -->
+
+class Solution {
+public:
+    int solve(int x,int y, int red, int blue) {
+        int count = 0;
+        int flag = 0;
+        while (blue >= x && red >= y) {
+            if (flag == 0) {
+                blue -= x;
+                x += 2;
+                flag = 1;
+            } else if (flag == 1) {
+
+                red -= y;
+                y += 2;
+                flag = 0;
+            }
+            count += 1;
+        }
+        if (flag == 0) {
+            if (blue >= x) {
+                blue -= x;
+                x += 2;
+                flag = 1;
+                count++;
+            }
+        } else if (flag == 1) {
+            if (red >= y) {
+                red -= y;
+                y += 2;
+                flag = 0;
+                count++;
+            }
+        }
+        return count;
+    }
+    int maxHeightOfTriangle(int red, int blue) {
+        return max(solve(1,2,red,blue),solve(1,2,blue,red));
+    }
+};
