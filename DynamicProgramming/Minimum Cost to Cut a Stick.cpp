@@ -2,7 +2,7 @@
 
 //                              1547. Minimum Cost to Cut a Stick
 
-//                                memo+rec
+//                                memo+recursion
 
 class Solution {
 public:
